@@ -1,91 +1,15 @@
 //Bebidas
-abstract class Beverage {
-	public abstract getDescription(): string;
-	public abstract getCost(): number;
-}
-
-class HouseBlend extends Beverage {
-	public getDescription(): string {
-		return 'House Blend';
-	}
-
-	public getCost(): number {
-		return 25.0;
-	}
-}
-
-class DarKRoast extends Beverage {
-	public getDescription(): string {
-		return 'Dark Roast';
-	}
-
-	public getCost(): number {
-		return 40.0;
-	}
-}
-
-class Decaf extends Beverage {
-	public getDescription(): string {
-		return 'Expresso';
-	}
-
-	public getCost(): number {
-		return 50.0;
-	}
-}
-class Expresso extends Beverage {
-	public getDescription(): string {
-		return 'Expresso';
-	}
-
-	public getCost(): number {
-		return 65.0;
-	}
-}
-
+import { Beverage } from './beverages/Beverage.js';
+import { HouseBlend } from './beverages/HouseBlend.js';
+import { DarkRoast } from './beverages/DarkRoast.js';
+import { Decaf } from './beverages/Decaf.js';
+import { Expresso } from './beverages/Expresso.js';
 //Complementos
+import { Milk } from './decorators/Milk.js';
+import { Soy } from './decorators/Soy.js';
+import { Mocha } from './decorators/Mocha.js';
 
-abstract class CondimentDecorator extends Beverage {
-	protected beverage: Beverage;
-}
-
-class Milk extends CondimentDecorator {
-	constructor(beverage: Beverage) {
-		super();
-		this.beverage = beverage;
-	}
-
-	getDescription(): string {
-		return `${this.beverage.getDescription()} with milk`;
-	}
-	getCost(): number {
-		return this.beverage.getCost() + 10.0;
-	}
-}
-class Soy extends CondimentDecorator {
-	constructor(beverage: Beverage) {
-		super();
-		this.beverage = beverage;
-	}
-
-	getDescription(): string {
-		return `${this.beverage.getDescription()} with soy`;
-	}
-	getCost(): number {
-		return this.beverage.getCost() + 15.0;
-	}
-}
-
-class Mocha extends CondimentDecorator {
-	constructor(beverage: Beverage) {
-		super();
-		this.beverage = beverage;
-	}
-
-	getDescription(): string {
-		return `${this.beverage.getDescription()} with mocha`;
-	}
-	getCost(): number {
-		return this.beverage.getCost() + 20.0;
-	}
-}
+let cafe1: Beverage = new DarkRoast();
+console.log(`${cafe1.getDescription()} cost: ${cafe1.getCost()}`);
+cafe1 = new Milk(cafe1);
+console.log(`${cafe1.getDescription()} cost: ${cafe1.getCost()}`);
