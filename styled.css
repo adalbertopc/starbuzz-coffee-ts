@@ -92,3 +92,14 @@ button {
     text-transform: capitalize;
     padding: 10px;
 }
+
+.btnEnlace {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnEnlace a {
+    text-decoration: none;
+    margin-left: 10px;
+}
