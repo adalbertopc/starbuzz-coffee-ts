@@ -4,10 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styled.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <title>Starbuzz coffee</title>
 </head>
 
 <body>
+
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo-img">
+                <img src="assets/java-logo.png" alt="">
+            </div>
+
+        </div>
+        <form action="" id="formu">
+            <label for="">Coffee</label>
+            <select name="" id="coffees">
+                <option value="">--Select--</option>
+                <option value="HB">House Blend</option>
+                <option value="DR">Dark Roast</option>
+                <option value="Df">Decaf</option>
+                <option value="Exp">Expresso</option>
+            </select>
+
+            <label for="">Complement</label>
+            <div class="selects">
+                <div>
+                    <select name="">
+                        <option value="Milk">Milk</option>
+                    </select>
+                    <input id="Nmilk" type="number" value="0" min="0">
+                </div>
+                <div>
+                    <select name="">
+                        <option value="Soy">Soy</option>
+                    </select>
+                    <input id="Nsoy" type="number" value="0" min="0">
+                </div>
+                <div>
+                    <select name="">
+                        <option value="Mocha">Mocha</option>
+                    </select>
+                    <input id="Nmocha" type="number" value="0" min="0">
+                </div>
+            </div>
+            <button type="submit" id="btnCost">Buy</button>
+        </form>
+
+        <div id="info" class="info">
+
+        </div>
+    </div>
+
+    <!-- <div class="menu-table">
+        <div class="coffees">
+            <p>Coffes</p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div> -->
+
+    <!-- trollo -->
+
     <script type="module" src="./dist/index.js"></script>
 </body>
 
